@@ -15,27 +15,51 @@
   </licenses>
 
   <artifactId>github-api</artifactId>
-  <version>1.67</version>
+  <version>1.68-tc</version>
   <packaging>hpi</packaging>
   <name>GitHub API Plugin</name>
   <url>https://wiki.jenkins-ci.org/display/JENKINS/GitHub+API+Plugin</url>
+
+  <distributionManagement>
+        <repository>
+            <id>jenkins</id>
+            <name>Jenkins maven repo</name>
+            <url>https://mvn.devtools.thomascook.com/nexus/content/repositories/java-microservice-release</url>
+        </repository>
+        <snapshotRepository>
+            <id>atg</id>
+            <name>Thomas Cook Online Snapshots</name>
+            <url>https://mvn.devtools.thomascook.com/nexus/content/repositories/java-microservice-snapshot</url>
+        </snapshotRepository>
+  </distributionManagement>
+
+  <repositories>
+        <repository>
+            <id>jenkins</id>
+            <name>Jenkins maven repo</name>
+            <url>https://mvn.devtools.thomascook.com/nexus/content/repositories/jenkins</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+  </repositories>
 
   <dependencies>
     <dependency>
       <groupId>org.kohsuke</groupId>
       <artifactId>github-api</artifactId>
-      <version>1.67</version>
+      <version>1.67-tc</version>
     </dependency>
   </dependencies>
 
-  <!-- get every artifact through maven.glassfish.org, which proxies all the artifacts that we need -->
+  <!-- get every artifact through maven.glassfish.org, which proxies all the artifacts that we need 
   <repositories>
     <repository>
       <id>repo.jenkins-ci.org</id>
       <url>http://repo.jenkins-ci.org/public/</url>
     </repository>
   </repositories>
-
+  -->
   <pluginRepositories>
     <pluginRepository>
       <id>repo.jenkins-ci.org</id>
